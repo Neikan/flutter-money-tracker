@@ -1,0 +1,1 @@
+enum TabBottomBar { expenses, profile }
