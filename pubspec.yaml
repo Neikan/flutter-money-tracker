@@ -26,3 +26,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: SF UI Display
+      fonts:
+        - asset: fonts/sf-ui-display-black-58646a6b80d5a.otf
+        - asset: fonts/sf-ui-display-bold-58646a511e3d9.otf
+        - asset: fonts/sf-ui-display-heavy-586470160b9e5.otf
+        - asset: fonts/sf-ui-display-light-58646b33e0551.otf
+        - asset: fonts/sf-ui-display-medium-58646be638f96.otf
+        - asset: fonts/sf-ui-display-semibold-58646eddcae92.otf
+        - asset: fonts/sf-ui-display-thin-58646e9b26e8b.otf
+        - asset: fonts/sf-ui-display-ultralight-58646b19bf205.otf
+          style: normal
