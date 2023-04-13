@@ -1,14 +1,13 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:fmt/presentation/consts/enums.dart';
-
-import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 
 // Project imports:
+import 'package:fmt/presentation/consts/enums.dart';
 import 'package:fmt/presentation/consts/keys.dart';
 import 'package:fmt/presentation/consts/translations.dart';
 import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
+import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 
 part 'components/fmt_avatar.dart';
 part 'components/fmt_button_save.dart';

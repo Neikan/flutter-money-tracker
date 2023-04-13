@@ -1,6 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Project imports:
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 
 final defaultTheme = ThemeData(
