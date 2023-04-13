@@ -1,17 +1,26 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 // Project imports:
+import 'package:fmt/data/models/app_profile/app_profile.dart';
+import 'package:fmt/domain/blocs/bloc_profile/bloc_profile.dart';
+import 'package:fmt/domain/blocs/bloc_profile/bloc_profile_state.dart';
 import 'package:fmt/presentation/consts/enums.dart';
 import 'package:fmt/presentation/consts/keys.dart';
 import 'package:fmt/presentation/consts/translations.dart';
 import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
+import 'package:fmt/presentation/ui/components/fmt_error_data.dart';
+import 'package:fmt/presentation/ui/components/fmt_loader.dart';
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 
 part 'components/fmt_avatar.dart';
 part 'components/fmt_button_save.dart';
 part 'components/fmt_button_signout.dart';
+part 'components/fmt_profile.dart';
 
 class ScreenProfile extends StatelessWidget {
   const ScreenProfile({super.key});
@@ -23,30 +32,12 @@ class ScreenProfile extends StatelessWidget {
         title: labelsProfile[keyTitle]!,
       ),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.only(top: 25.0, bottom: 13.0, left: 25.0),
-              child: Row(
-                children: [
-                  const _FMTAvatar(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 13.0),
-                        child: Text('skillbox@skillbox.ru'),
-                      ),
-                      _FMTButtonSignout(),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const _FMTButtonSave(),
-          ],
+        child: BlocBuilder<BlocProfile, BlocProfileState>(
+          builder: (context, state) => state.when(
+            loading: () => const FMTLoader(),
+            loaded: (profile) => _FMTProfile(profile: profile),
+            error: (message) => FMTErrorData(text: message),
+          ),
         ),
       ),
       bottomNavigationBar: const FMTBottonBar(tab: TabBottomBar.profile),

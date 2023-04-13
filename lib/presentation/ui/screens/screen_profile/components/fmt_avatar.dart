@@ -1,14 +1,16 @@
 part of '../screen_profile.dart';
 
 class _FMTAvatar extends StatelessWidget {
-  final String? image;
+  final String? avatar;
 
   const _FMTAvatar({
-    this.image,
+    this.avatar,
   });
 
   @override
   Widget build(BuildContext context) {
+    final isAvatar = avatar != null;
+
     return Container(
       padding: const EdgeInsets.only(right: 20.0),
       child: GestureDetector(
@@ -16,12 +18,14 @@ class _FMTAvatar extends StatelessWidget {
         child: CircleAvatar(
           radius: 40.0,
           backgroundColor: colors.grayLight,
-          backgroundImage: image != null ? NetworkImage(image!) : null,
-          child: const Icon(
-            Icons.photo_camera,
-            size: 36,
-            color: colors.gray,
-          ),
+          backgroundImage: isAvatar ? NetworkImage(avatar!) : null,
+          child: isAvatar
+              ? null
+              : const Icon(
+                  Icons.photo_camera,
+                  size: 36,
+                  color: colors.gray,
+                ),
         ),
       ),
     );
