@@ -12,9 +12,10 @@ class FMTApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: defaultTheme,
       onGenerateRoute: generateRoute,
-      initialRoute: routeSummary,
+      initialRoute: routeProfile,
     );
   }
 }
