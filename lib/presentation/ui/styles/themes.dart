@@ -10,56 +10,18 @@ final defaultTheme = ThemeData(
     primary: colors.base,
   ),
   fontFamily: 'SF UI Display',
-  appBarTheme: appBarTheme,
+  appBarTheme: _appBarTheme,
   primaryColor: Colors.white,
-  // primarySwatch: Colors.deepPurple,
   visualDensity: VisualDensity.adaptivePlatformDensity,
-  iconTheme: iconTheme,
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(
-      fontSize: 17.0,
-      height: 1.0,
-    ),
-    bodySmall: TextStyle(
-      fontSize: 17.0,
-      height: 1.0,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 17.0,
-      height: 1.0,
-    ),
-  ),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ButtonStyle(
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        const TextStyle(
-          fontSize: 17.0,
-          height: 1.0,
-        ),
-      ),
-      shape: MaterialStateProperty.all<OutlinedBorder?>(
-        const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
-          ),
-        ),
-      ),
-    ),
-  ),
-  textButtonTheme: TextButtonThemeData(
-    style: ButtonStyle(
-      padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(EdgeInsets.zero),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        const TextStyle(
-          fontSize: 17.0,
-          height: 1.0,
-        ),
-      ),
-    ),
-  ),
+  iconTheme: _iconTheme,
+  textTheme: _textTheme,
+  elevatedButtonTheme: _elevatedButtonTheme,
+  iconButtonTheme: _iconButtonTheme,
+  textButtonTheme: _textButtonTheme,
+  listTileTheme: _listTileTheme,
 );
 
-const appBarTheme = AppBarTheme(
+const _appBarTheme = AppBarTheme(
   systemOverlayStyle: SystemUiOverlayStyle(
     statusBarColor: colors.base,
     statusBarIconBrightness: Brightness.light,
@@ -72,6 +34,61 @@ const appBarTheme = AppBarTheme(
   ),
 );
 
-const iconTheme = IconThemeData(
+const _iconTheme = IconThemeData(
   color: Colors.white,
+);
+
+final _elevatedButtonTheme = ElevatedButtonThemeData(
+  style: ButtonStyle(
+    textStyle: MaterialStateProperty.all<TextStyle>(
+      const TextStyle(
+        fontSize: 17.0,
+        height: 1.0,
+      ),
+    ),
+    shape: MaterialStateProperty.all<OutlinedBorder?>(
+      const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(15.0),
+        ),
+      ),
+    ),
+  ),
+);
+
+final _iconButtonTheme = IconButtonThemeData(
+  style: ButtonStyle(
+    iconColor: MaterialStateProperty.all<Color?>(Colors.white),
+  ),
+);
+
+final _textButtonTheme = TextButtonThemeData(
+  style: ButtonStyle(
+    padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(EdgeInsets.zero),
+    textStyle: MaterialStateProperty.all<TextStyle>(
+      const TextStyle(
+        fontSize: 17.0,
+        height: 1.0,
+      ),
+    ),
+  ),
+);
+
+const _listTileTheme = ListTileThemeData(
+  contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 0),
+);
+
+const _textTheme = TextTheme(
+  bodyLarge: TextStyle(
+    fontSize: 17.0,
+    height: 1.0,
+  ),
+  bodyMedium: TextStyle(
+    fontSize: 15.0,
+    height: 1.1,
+  ),
+  bodySmall: TextStyle(
+    fontSize: 15.0,
+    height: 1.0,
+  ),
 );
