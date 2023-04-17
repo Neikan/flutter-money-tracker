@@ -12,6 +12,7 @@ class BlocCategories extends Bloc<BlocCategoriesEvent, BlocCategoriesState> {
   BlocCategories({required this.repo})
       : super(const BlocCategoriesState.loading()) {
     on<BlocCategoriesEventInit>(_init);
+    on<BlocCategoriesEventAdd>(_add);
   }
 
   Future<void> _init(
@@ -19,6 +20,21 @@ class BlocCategories extends Bloc<BlocCategoriesEvent, BlocCategoriesState> {
     Emitter<BlocCategoriesState> emit,
   ) async {
     try {
+      final categories = await repo.getData();
+
+      emit(BlocCategoriesState.loaded(categories));
+    } catch (e) {
+      emit(BlocCategoriesState.error(e.toString()));
+    }
+  }
+
+  Future<void> _add(
+    BlocCategoriesEventAdd event,
+    Emitter<BlocCategoriesState> emit,
+  ) async {
+    try {
+      await repo.addData(event.category);
+
       final categories = await repo.getData();
 
       emit(BlocCategoriesState.loaded(categories));
