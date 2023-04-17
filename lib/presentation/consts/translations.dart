@@ -15,8 +15,13 @@ final labelsBottomBar = <TabBottomBar, String>{
 
 const labelsProfile = <String, String>{
   keyTitle: 'Профиль',
+};
+
+const labelsButtons = <String, String>{
   keyButtonSave: 'Сохранить',
   keyButtonSignout: 'Выйти',
+  keyButtonAdd: 'Добавить',
+  keyButtonCancel: 'Отмена',
 };
 
 const labelsNotFound = <String, String>{
