@@ -71,6 +71,13 @@ final _textButtonTheme = TextButtonThemeData(
         height: 1.0,
       ),
     ),
+    shape: MaterialStateProperty.all<OutlinedBorder?>(
+      const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(15.0),
+        ),
+      ),
+    ),
   ),
 );
 
