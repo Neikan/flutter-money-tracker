@@ -8,11 +8,11 @@ class _FMTButtonSignout extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all<Size?>(
-          const Size(145.0, 50.0),
+          const Size(145.0, sizes.heightButton),
         ),
       ),
       onPressed: () {},
-      child: Text(labelsProfile[keyButtonSignout]!),
+      child: Text(labelsButtons[keyButtonSignout]!),
     );
   }
 }

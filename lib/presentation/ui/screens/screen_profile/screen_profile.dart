@@ -16,6 +16,7 @@ import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_error_data.dart';
 import 'package:fmt/presentation/ui/components/fmt_loader.dart';
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
+import 'package:fmt/presentation/ui/styles/sizes.dart' as sizes;
 
 part 'components/fmt_avatar.dart';
 part 'components/fmt_button_save.dart';
@@ -33,7 +34,7 @@ class ScreenProfile extends StatelessWidget {
       ),
       body: SafeArea(
         child: BlocBuilder<BlocProfile, BlocProfileState>(
-          builder: (context, state) => state.when(
+          builder: (_, state) => state.when(
             loading: () => const FMTLoader(),
             loaded: (profile) => _FMTProfile(profile: profile),
             error: (message) => FMTErrorData(text: message),

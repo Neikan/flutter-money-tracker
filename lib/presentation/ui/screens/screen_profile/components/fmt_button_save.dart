@@ -9,7 +9,7 @@ class _FMTButtonSave extends StatelessWidget {
       padding: const EdgeInsets.only(left: 23.0),
       child: TextButton(
         onPressed: () {},
-        child: Text(labelsProfile[keyButtonSave]!),
+        child: Text(labelsButtons[keyButtonSave]!),
       ),
     );
   }
