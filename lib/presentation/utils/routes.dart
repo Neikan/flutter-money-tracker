@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
-import 'package:fmt/data/repositories/repository_categories/repository_categories_imp.dart';
 import 'package:fmt/data/repositories/repository_profile/repository_profile_imp.dart';
-import 'package:fmt/domain/blocs/bloc_category/bloc_categories.dart';
-import 'package:fmt/domain/blocs/bloc_category/bloc_categories_event.dart';
 import 'package:fmt/domain/blocs/bloc_profile/bloc_profile.dart';
 import 'package:fmt/domain/blocs/bloc_profile/bloc_profile_event.dart';
 import 'package:fmt/presentation/consts/routes.dart';
@@ -21,12 +18,7 @@ Route<dynamic> generateRoute(RouteSettings settings) => MaterialPageRoute(
       builder: (BuildContext context) {
         switch (settings.name) {
           case routeSummary:
-            return BlocProvider<BlocCategories>(
-              create: (_) =>
-                  BlocCategories(repo: const RepositoryCategoriesImp())
-                    ..add(BlocCategoriesEventInit()),
-              child: const ScreenSummary(),
-            );
+            return const ScreenSummary();
 
           case routeProfile:
             return BlocProvider<BlocProfile>(
