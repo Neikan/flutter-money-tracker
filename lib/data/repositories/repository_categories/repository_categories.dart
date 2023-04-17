@@ -5,4 +5,6 @@ abstract class RepositoryCategories {
   const RepositoryCategories();
 
   Future<List<AppCategory>> getData();
+
+  Future<void> addData(AppCategory category);
 }
