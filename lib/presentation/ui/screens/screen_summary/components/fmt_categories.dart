@@ -11,12 +11,15 @@ class _FMTCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FMTDiagram(categories: categories),
+        FMTDiagramPie(categories: categories),
         Expanded(
           child: ListView.builder(
-            padding: const EdgeInsets.all(25.0),
+            physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics(),
+            ),
+            padding: const EdgeInsets.only(top: 25.0, right: 25.0, left: 25.0),
             itemCount: categories.length,
-            itemBuilder: (context, index) =>
+            itemBuilder: (_, index) =>
                 _FMTCategory(category: categories[index]),
           ),
         ),
