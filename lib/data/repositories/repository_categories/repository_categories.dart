@@ -4,7 +4,7 @@ import 'package:fmt/data/models/app_category/app_category.dart';
 abstract class RepositoryCategories {
   const RepositoryCategories();
 
-  Future<List<AppCategory>> getData();
+  Future<List<AppCategory>> get();
 
-  Future<void> addData(AppCategory category);
+  Future<void> add(AppCategory category);
 }

@@ -19,12 +19,12 @@ class RepositoryCategoriesImp extends RepositoryCategories {
   ];
 
   @override
-  Future<List<AppCategory>> getData() async {
+  Future<List<AppCategory>> get() async {
     return state;
   }
 
   @override
-  Future<void> addData(AppCategory category) async {
+  Future<void> add(AppCategory category) async {
     state = [...state, category];
   }
 }
