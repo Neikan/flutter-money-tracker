@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 // Project imports:
 import 'package:fmt/data/repositories/repository_categories/repository_categories.dart';
-import 'package:fmt/domain/blocs/bloc_category/bloc_categories_event.dart';
-import 'package:fmt/domain/blocs/bloc_category/bloc_categories_state.dart';
+import 'package:fmt/domain/blocs/bloc_categories/bloc_categories_event.dart';
+import 'package:fmt/domain/blocs/bloc_categories/bloc_categories_state.dart';
 
 class BlocCategories extends Bloc<BlocCategoriesEvent, BlocCategoriesState> {
   final RepositoryCategories repo;
@@ -20,7 +20,7 @@ class BlocCategories extends Bloc<BlocCategoriesEvent, BlocCategoriesState> {
     Emitter<BlocCategoriesState> emit,
   ) async {
     try {
-      final categories = await repo.getData();
+      final categories = await repo.get();
 
       emit(BlocCategoriesState.loaded(categories));
     } catch (e) {
@@ -33,9 +33,9 @@ class BlocCategories extends Bloc<BlocCategoriesEvent, BlocCategoriesState> {
     Emitter<BlocCategoriesState> emit,
   ) async {
     try {
-      await repo.addData(event.category);
+      await repo.add(event.category);
 
-      final categories = await repo.getData();
+      final categories = await repo.get();
 
       emit(BlocCategoriesState.loaded(categories));
     } catch (e) {
