@@ -1,3 +1,4 @@
+// Package imports:
 import 'package:date_format/date_format.dart';
 
 class AppRussianDateLocale implements DateLocale {
@@ -5,34 +6,34 @@ class AppRussianDateLocale implements DateLocale {
 
   @override
   final List<String> monthsShort = const [
-    'янв.',
-    'февр.',
+    'янв',
+    'февр',
     'март',
-    'апр.',
+    'апр',
     'май',
     'июнь',
     'июль',
-    'авг.',
-    'сент.',
-    'окт.',
-    'нояб.',
-    'дек.'
+    'авг',
+    'сент',
+    'окт',
+    'нояб',
+    'дек'
   ];
 
   @override
   final List<String> monthsLong = const [
-    'январь',
-    'февраль',
-    'март',
-    'апрель',
-    'май',
-    'июнь',
-    'июль',
-    'август',
-    'сентябрь',
-    'октябрь',
-    'ноябрь',
-    'декабрь'
+    'января',
+    'февраля',
+    'марта',
+    'апреля',
+    'мая',
+    'июня',
+    'июля',
+    'августа',
+    'сентября',
+    'октября',
+    'ноября',
+    'декабря'
   ];
 
   @override
