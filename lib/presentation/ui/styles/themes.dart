@@ -1,16 +1,14 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 // Project imports:
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 
 final defaultTheme = ThemeData(
   colorScheme: const ColorScheme.light(
-    primary: colors.base,
+    primary: colors.brand,
   ),
   fontFamily: 'SF UI Display',
-  appBarTheme: _appBarTheme,
   primaryColor: Colors.white,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   iconTheme: _iconTheme,
@@ -19,19 +17,13 @@ final defaultTheme = ThemeData(
   iconButtonTheme: _iconButtonTheme,
   textButtonTheme: _textButtonTheme,
   listTileTheme: _listTileTheme,
+  dialogTheme: _dialogTheme,
 );
 
-const _appBarTheme = AppBarTheme(
-  systemOverlayStyle: SystemUiOverlayStyle(
-    statusBarColor: colors.base,
-    statusBarIconBrightness: Brightness.light,
-    statusBarBrightness: Brightness.light,
-  ),
-  titleTextStyle: TextStyle(
-    color: Colors.white,
-    fontSize: 24,
-    fontWeight: FontWeight.w700,
-  ),
+const appBarTitleTheme = TextStyle(
+  color: Colors.white,
+  fontSize: 24,
+  fontWeight: FontWeight.w700,
 );
 
 const _iconTheme = IconThemeData(
@@ -97,5 +89,15 @@ const _textTheme = TextTheme(
   bodySmall: TextStyle(
     fontSize: 15.0,
     height: 1.0,
+  ),
+);
+
+final _dialogTheme = DialogTheme(
+  shadowColor: Colors.black.withOpacity(0.12),
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+  titleTextStyle: const TextStyle(
+    color: Colors.black,
+    fontSize: 20.0,
+    fontWeight: FontWeight.w700,
   ),
 );
