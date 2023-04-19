@@ -1,8 +1,9 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fmt/presentation/consts/enums.dart';
 
+// Project imports:
+import 'package:fmt/presentation/consts/enums.dart';
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 
 class FMTFieldText extends StatelessWidget {
@@ -16,7 +17,7 @@ class FMTFieldText extends StatelessWidget {
       obscureText,
       readOnly,
       withCounter;
-  final EdgeInsetsGeometry? padding, contentPadding;
+  final EdgeInsetsGeometry? padding;
   final FocusNode? focusNode;
   final int? maxLength;
   final AppFieldStyle fieldStyle;
@@ -34,7 +35,6 @@ class FMTFieldText extends StatelessWidget {
     super.key,
     this.autofillHints,
     this.autofocus = false,
-    this.contentPadding,
     this.controller,
     this.enabled = true,
     this.enableInteractiveSelection = true,
@@ -67,7 +67,7 @@ class FMTFieldText extends StatelessWidget {
       autofillHints: autofillHints,
       autofocus: autofocus,
       controller: controller,
-      cursorColor: colors.base,
+      cursorColor: colors.brand,
       decoration: _getFieldStyle(),
       enabled: enabled,
       enableInteractiveSelection: enableInteractiveSelection,
@@ -95,17 +95,24 @@ class FMTFieldText extends StatelessWidget {
 
   InputDecoration _getStyleBordered() {
     return InputDecoration(
-      border: const UnderlineInputBorder(
+      border: const OutlineInputBorder(
         borderSide: BorderSide(
           color: colors.grayLight,
         ),
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
       ),
-      contentPadding: contentPadding,
+      focusedBorder: const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: colors.brand,
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 21.0),
       labelText: labelText,
       labelStyle: const TextStyle(color: colors.gray),
       floatingLabelStyle: const TextStyle(),
       counterText: _getCounter(),
-      focusColor: colors.base,
+      focusColor: colors.brand,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
       counterStyle: const TextStyle(
@@ -122,7 +129,10 @@ class FMTFieldText extends StatelessWidget {
           color: colors.grayLight,
         ),
       ),
-      contentPadding: contentPadding,
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: 5.0,
+        vertical: 0.0,
+      ),
       labelText: labelText,
       labelStyle: const TextStyle(color: colors.gray),
       errorStyle: const TextStyle(
@@ -130,7 +140,11 @@ class FMTFieldText extends StatelessWidget {
       ),
       floatingLabelStyle: const TextStyle(),
       counterText: _getCounter(),
-      focusColor: colors.base,
+      counterStyle: const TextStyle(
+        fontSize: 10.0,
+        color: colors.gray,
+      ),
+      focusColor: colors.brand,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
     );
