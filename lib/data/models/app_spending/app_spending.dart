@@ -1,7 +1,7 @@
 class AppSpending {
   final String id, categoryId;
   final double sum;
-  final DateTime date;
+  final int date;
 
   const AppSpending({
     required this.id,
