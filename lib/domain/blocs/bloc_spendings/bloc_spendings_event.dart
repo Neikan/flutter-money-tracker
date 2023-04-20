@@ -15,3 +15,15 @@ class BlocSpendingsEventAdd extends BlocSpendingsEvent {
 
   BlocSpendingsEventAdd(this.spending);
 }
+
+class BlocSpendingsEventRequestToRemove extends BlocSpendingsEvent {
+  final AppSpending spending;
+
+  BlocSpendingsEventRequestToRemove(this.spending);
+}
+
+class BlocSpendingsEventRemove extends BlocSpendingsEvent {
+  final AppSpending spending;
+
+  BlocSpendingsEventRemove(this.spending);
+}

@@ -13,6 +13,8 @@ class BlocSpendings extends Bloc<BlocSpendingsEvent, BlocSpendingsState> {
       : super(const BlocSpendingsState.loading()) {
     on<BlocSpendingsEventInit>(_init);
     on<BlocSpendingsEventAdd>(_add);
+    on<BlocSpendingsEventRequestToRemove>(_requestToRemove);
+    on<BlocSpendingsEventRemove>(_remove);
   }
 
   Future<void> _init(
@@ -34,6 +36,36 @@ class BlocSpendings extends Bloc<BlocSpendingsEvent, BlocSpendingsState> {
   ) async {
     try {
       await repo.add(event.spending);
+
+      final spendings = await repo.get(event.spending.categoryId);
+
+      emit(BlocSpendingsState.loaded(spendings));
+    } catch (e) {
+      emit(BlocSpendingsState.error(e.toString()));
+    }
+  }
+
+  Future<void> _requestToRemove(
+    BlocSpendingsEventRequestToRemove event,
+    Emitter<BlocSpendingsState> emit,
+  ) async {
+    try {
+      await repo.requestToRemove(event.spending);
+
+      final spendings = await repo.get(event.spending.categoryId);
+
+      emit(BlocSpendingsState.loaded(spendings));
+    } catch (e) {
+      emit(BlocSpendingsState.error(e.toString()));
+    }
+  }
+
+  Future<void> _remove(
+    BlocSpendingsEventRemove event,
+    Emitter<BlocSpendingsState> emit,
+  ) async {
+    try {
+      await repo.remove(event.spending);
 
       final spendings = await repo.get(event.spending.categoryId);
 
