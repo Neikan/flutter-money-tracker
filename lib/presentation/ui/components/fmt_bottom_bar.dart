@@ -39,7 +39,7 @@ class FMTBottonBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: const Icon(Icons.person),
           label: labelsBottomBar[TabBottomBar.profile],
-        )
+        ),
       ],
     );
   }

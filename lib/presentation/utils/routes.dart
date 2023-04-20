@@ -29,9 +29,11 @@ Route<dynamic> generateRoute(RouteSettings settings) => MaterialPageRoute(
             final category = (settings.arguments
                 as Map<String, AppCategory>)[keyArgsCategory]!;
 
-            context.read<BlocSpendings>().add(BlocSpendingsEventInit(category));
+            BlocProvider.of<BlocSpendings>(context).add(
+              BlocSpendingsEventInit(category),
+            );
 
-            return ScreenCategory(category: category);
+            return ScreenSpendings(category: category);
 
           case routeProfile:
             return BlocProvider<BlocProfile>(

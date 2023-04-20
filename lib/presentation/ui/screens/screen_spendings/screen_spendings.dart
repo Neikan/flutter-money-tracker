@@ -8,23 +8,29 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fmt/data/models/app_category/app_category.dart';
 import 'package:fmt/data/models/app_spending/app_spending.dart';
 import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings.dart';
+import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings_event.dart';
 import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings_state.dart';
 import 'package:fmt/presentation/consts/enums.dart';
+import 'package:fmt/presentation/consts/keys.dart';
+import 'package:fmt/presentation/consts/translations.dart';
+import 'package:fmt/presentation/ui/components/fmt_alert_dialog.dart';
 import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
+import 'package:fmt/presentation/ui/components/fmt_card.dart';
 import 'package:fmt/presentation/ui/components/fmt_error_data.dart';
 import 'package:fmt/presentation/ui/components/fmt_loader.dart';
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 import 'package:fmt/presentation/utils/common.dart';
 import 'package:fmt/presentation/utils/datetime.dart';
 
+part 'components/fmt_button_confirm.dart';
 part 'components/fmt_spending.dart';
 part 'components/fmt_spendings.dart';
 
-class ScreenCategory extends StatelessWidget {
+class ScreenSpendings extends StatelessWidget {
   final AppCategory category;
 
-  const ScreenCategory({
+  const ScreenSpendings({
     super.key,
     required this.category,
   });
