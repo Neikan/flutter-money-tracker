@@ -17,7 +17,7 @@ class AppRussianDateLocale implements DateLocale {
     'сент',
     'окт',
     'нояб',
-    'дек'
+    'дек',
   ];
 
   @override
@@ -33,7 +33,7 @@ class AppRussianDateLocale implements DateLocale {
     'сентября',
     'октября',
     'ноября',
-    'декабря'
+    'декабря',
   ];
 
   @override
@@ -44,7 +44,7 @@ class AppRussianDateLocale implements DateLocale {
     'Чт',
     'Пт',
     'Сб',
-    'Вс'
+    'Вс',
   ];
 
   @override
@@ -55,7 +55,7 @@ class AppRussianDateLocale implements DateLocale {
     'Четверг',
     'Пятница',
     'Суббота',
-    'Воскресенье'
+    'Воскресенье',
   ];
 
   @override

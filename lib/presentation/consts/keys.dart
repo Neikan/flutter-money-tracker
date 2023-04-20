@@ -14,3 +14,5 @@ const String keyButtonSave = 'buttonSave';
 const String keyButtonSignout = 'buttonSignout';
 const String keyButtonAdd = 'buttonAdd';
 const String keyButtonCancel = 'buttonCancel';
+const String keyButtonRemove = 'buttonRemove';
+const String keyButtonConfirm = 'buttonConfirm';

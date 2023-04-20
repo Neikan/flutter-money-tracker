@@ -35,6 +35,8 @@ const labelsButtons = <String, String>{
   keyButtonSignout: 'Выйти',
   keyButtonAdd: 'Добавить',
   keyButtonCancel: 'Отмена',
+  keyButtonRemove: 'Удалить',
+  keyButtonConfirm: 'Подтвердить',
 };
 
 const labelsNotFound = <String, String>{
