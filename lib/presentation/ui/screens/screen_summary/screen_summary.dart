@@ -22,6 +22,7 @@ import 'package:fmt/presentation/consts/translations.dart';
 import 'package:fmt/presentation/ui/components/fmt_alert_dialog.dart';
 import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
+import 'package:fmt/presentation/ui/components/fmt_card.dart';
 import 'package:fmt/presentation/ui/components/fmt_error_data.dart';
 import 'package:fmt/presentation/ui/components/fmt_hero_text.dart';
 import 'package:fmt/presentation/ui/components/fmt_loader.dart';

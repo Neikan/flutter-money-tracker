@@ -15,16 +15,16 @@ class _FMTButtonAddSpending extends StatelessWidget {
       padding: const EdgeInsets.only(top: 30.0, bottom: 6.0),
       child: ElevatedButton(
         onPressed: () {
-          context.read<BlocSpendings>().add(
-                BlocSpendingsEventAdd(
-                  AppSpending(
-                    id: const Uuid().v4(),
-                    categoryId: category.id,
-                    sum: double.tryParse(controller.text) ?? 0.0,
-                    date: DateTime.now().millisecondsSinceEpoch,
-                  ),
-                ),
-              );
+          BlocProvider.of<BlocSpendings>(context).add(
+            BlocSpendingsEventAdd(
+              AppSpending(
+                id: const Uuid().v4(),
+                categoryId: category.id,
+                sum: double.tryParse(controller.text) ?? 0.0,
+                date: DateTime.now().millisecondsSinceEpoch,
+              ),
+            ),
+          );
 
           Navigator.pop(context);
         },
