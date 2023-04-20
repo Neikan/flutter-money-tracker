@@ -17,6 +17,7 @@ final defaultTheme = ThemeData(
   iconButtonTheme: _iconButtonTheme,
   textButtonTheme: _textButtonTheme,
   listTileTheme: _listTileTheme,
+  cardTheme: _cardTheme,
   dialogTheme: _dialogTheme,
 );
 
@@ -73,8 +74,21 @@ final _textButtonTheme = TextButtonThemeData(
   ),
 );
 
-const _listTileTheme = ListTileThemeData(
-  contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 0),
+final _cardTheme = CardTheme(
+  elevation: 6.0,
+  margin: const EdgeInsets.only(bottom: 25.0),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(10.0),
+  ),
+);
+
+final _listTileTheme = ListTileThemeData(
+  dense: true,
+  minVerticalPadding: 0.0,
+  contentPadding: const EdgeInsets.fromLTRB(25.0, 0.0, 9.0, 0.0),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(10.0),
+  ),
 );
 
 const _textTheme = TextTheme(
