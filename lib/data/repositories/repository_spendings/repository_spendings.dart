@@ -7,4 +7,8 @@ abstract class RepositorySpendings {
   Future<List<AppSpending>> get(String id);
 
   Future<void> add(AppSpending spending);
+
+  Future<void> requestToRemove(AppSpending spending);
+
+  Future<void> remove(AppSpending spending);
 }
