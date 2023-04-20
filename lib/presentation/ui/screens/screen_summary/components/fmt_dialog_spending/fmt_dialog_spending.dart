@@ -24,14 +24,16 @@ class FMTDialogSpending extends StatelessWidget {
               fieldStyle: AppFieldStyle.bordered,
               textInputType: TextInputType.number,
             ),
-            _FMTButtonAddSpending(
-              controller: _controller,
-              category: category,
-            ),
-            const _FMTButtonCancel(),
           ],
         ),
       ),
+      actions: [
+        _FMTButtonAddSpending(
+          controller: _controller,
+          category: category,
+        ),
+        const _FMTButtonCancel(),
+      ],
     );
   }
 }

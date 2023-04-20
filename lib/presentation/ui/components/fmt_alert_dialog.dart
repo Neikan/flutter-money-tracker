@@ -2,12 +2,15 @@
 import 'package:flutter/material.dart';
 
 class FMTDialogWrapper extends StatelessWidget {
-  final Widget title, content;
+  final Widget title;
+  final Widget? content;
+  final List<Widget>? actions;
 
   const FMTDialogWrapper({
     super.key,
     required this.title,
-    required this.content,
+    this.content,
+    this.actions,
   });
 
   @override
@@ -22,6 +25,7 @@ class FMTDialogWrapper extends StatelessWidget {
       ),
       title: title,
       content: content,
+      actions: actions,
     );
   }
 }

@@ -30,14 +30,16 @@ class FMTDialogCategory extends StatelessWidget {
               maxLength: 6,
               withCounter: true,
             ),
-            _FMTButtonAdd(
-              controllerTitle: _controllerTitle,
-              controllerColor: _controllerColor,
-            ),
-            const _FMTButtonCancel(),
           ],
         ),
       ),
+      actions: [
+        _FMTButtonAdd(
+          controllerTitle: _controllerTitle,
+          controllerColor: _controllerColor,
+        ),
+        const _FMTButtonCancel(),
+      ],
     );
   }
 }
