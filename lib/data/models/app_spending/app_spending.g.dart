@@ -12,7 +12,7 @@ _$_AppSpending _$$_AppSpendingFromJson(Map<String, dynamic> json) =>
       categoryId: json['categoryId'] as String,
       sum: (json['sum'] as num).toDouble(),
       date: json['date'] as int,
-      isRequestToRemove: json['isRequestToRemove'] as bool?,
+      isRequestToRemove: json['isRequestToRemove'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_AppSpendingToJson(_$_AppSpending instance) =>

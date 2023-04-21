@@ -24,7 +24,7 @@ mixin _$AppSpending {
   String get categoryId => throw _privateConstructorUsedError;
   double get sum => throw _privateConstructorUsedError;
   int get date => throw _privateConstructorUsedError;
-  bool? get isRequestToRemove => throw _privateConstructorUsedError;
+  bool get isRequestToRemove => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +43,7 @@ abstract class $AppSpendingCopyWith<$Res> {
       String categoryId,
       double sum,
       int date,
-      bool? isRequestToRemove});
+      bool isRequestToRemove});
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$AppSpendingCopyWithImpl<$Res, $Val extends AppSpending>
     Object? categoryId = null,
     Object? sum = null,
     Object? date = null,
-    Object? isRequestToRemove = freezed,
+    Object? isRequestToRemove = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -82,10 +82,10 @@ class _$AppSpendingCopyWithImpl<$Res, $Val extends AppSpending>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as int,
-      isRequestToRemove: freezed == isRequestToRemove
+      isRequestToRemove: null == isRequestToRemove
           ? _value.isRequestToRemove
           : isRequestToRemove // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ) as $Val);
   }
 }
@@ -103,7 +103,7 @@ abstract class _$$_AppSpendingCopyWith<$Res>
       String categoryId,
       double sum,
       int date,
-      bool? isRequestToRemove});
+      bool isRequestToRemove});
 }
 
 /// @nodoc
@@ -121,7 +121,7 @@ class __$$_AppSpendingCopyWithImpl<$Res>
     Object? categoryId = null,
     Object? sum = null,
     Object? date = null,
-    Object? isRequestToRemove = freezed,
+    Object? isRequestToRemove = null,
   }) {
     return _then(_$_AppSpending(
       id: null == id
@@ -140,10 +140,10 @@ class __$$_AppSpendingCopyWithImpl<$Res>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as int,
-      isRequestToRemove: freezed == isRequestToRemove
+      isRequestToRemove: null == isRequestToRemove
           ? _value.isRequestToRemove
           : isRequestToRemove // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -156,7 +156,7 @@ class _$_AppSpending implements _AppSpending {
       required this.categoryId,
       required this.sum,
       required this.date,
-      this.isRequestToRemove});
+      this.isRequestToRemove = false});
 
   factory _$_AppSpending.fromJson(Map<String, dynamic> json) =>
       _$$_AppSpendingFromJson(json);
@@ -170,7 +170,8 @@ class _$_AppSpending implements _AppSpending {
   @override
   final int date;
   @override
-  final bool? isRequestToRemove;
+  @JsonKey()
+  final bool isRequestToRemove;
 
   @override
   String toString() {
@@ -216,7 +217,7 @@ abstract class _AppSpending implements AppSpending {
       required final String categoryId,
       required final double sum,
       required final int date,
-      final bool? isRequestToRemove}) = _$_AppSpending;
+      final bool isRequestToRemove}) = _$_AppSpending;
 
   factory _AppSpending.fromJson(Map<String, dynamic> json) =
       _$_AppSpending.fromJson;
@@ -230,7 +231,7 @@ abstract class _AppSpending implements AppSpending {
   @override
   int get date;
   @override
-  bool? get isRequestToRemove;
+  bool get isRequestToRemove;
   @override
   @JsonKey(ignore: true)
   _$$_AppSpendingCopyWith<_$_AppSpending> get copyWith =>

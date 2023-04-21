@@ -11,7 +11,7 @@ class AppSpending with _$AppSpending {
     required String categoryId,
     required double sum,
     required int date,
-    bool? isRequestToRemove,
+    @Default(false) bool isRequestToRemove,
   }) = _AppSpending;
 
   factory AppSpending.fromJson(Map<String, dynamic> json) =>
