@@ -12,5 +12,5 @@ abstract class RepositorySpendings {
 
   Future<void> cancelToRemove(AppSpending spending);
 
-  Future<void> remove(AppSpending spending);
+  Future<void> confirmToRemove(AppSpending spending);
 }

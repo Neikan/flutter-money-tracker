@@ -62,7 +62,7 @@ class RepositorySpendingsImp extends RepositorySpendings {
   }
 
   @override
-  Future<void> remove(AppSpending spending) async {
+  Future<void> confirmToRemove(AppSpending spending) async {
     state = state.where((element) => spending.id != element.id).toList();
   }
 }
