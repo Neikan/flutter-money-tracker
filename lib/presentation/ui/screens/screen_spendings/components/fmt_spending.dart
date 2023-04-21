@@ -9,13 +9,17 @@ class _FMTSpending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void handleLongTap() => BlocProvider.of<BlocSpendings>(context)
+    void handleRequestToRemove() => BlocProvider.of<BlocSpendings>(context)
         .add(BlocSpendingsEventRequestToRemove(spending));
 
     return FMTCard(
-      title: Text('${spending.sum}'),
+      title: Text(
+        '${spending.sum}',
+        style: const TextStyle(fontSize: 15.0),
+      ),
       subtitle: getFormattedDate(spending.date),
-      onLongTap: handleLongTap,
+      onRequestToRemove: handleRequestToRemove,
+      isRequestToRemove: spending.isRequestToRemove,
     );
   }
 }
