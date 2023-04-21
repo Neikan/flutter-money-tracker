@@ -16,6 +16,10 @@ const labelsDialogCategory = <String, String>{
   keyFieldColor: 'Цвет',
 };
 
+const labelsDialogCategoryRemove = <String, String>{
+  keyTitle: 'Удалить категорию ',
+};
+
 const labelsDialogSpending = <String, String>{
   keyTitle: 'Добавить расход',
   keyFieldSum: 'Введите сумму',
