@@ -10,3 +10,15 @@ class BlocCategoriesEventAdd extends BlocCategoriesEvent {
 
   BlocCategoriesEventAdd(this.category);
 }
+
+class BlocCategoriesEventRequestToRemove extends BlocCategoriesEvent {
+  final AppCategory category;
+
+  BlocCategoriesEventRequestToRemove(this.category);
+}
+
+class BlocCategoriesEventRemove extends BlocCategoriesEvent {
+  final AppCategory category;
+
+  BlocCategoriesEventRemove(this.category);
+}
