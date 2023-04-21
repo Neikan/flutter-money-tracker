@@ -9,11 +9,14 @@ class _FMTCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void handleTap() => GlobalNavigator.showAlert(
+    void handleAdd() => GlobalNavigator.showAlert(
           FMTDialogSpending(category: category),
         );
 
-    void handlePressed() {
+    void handleRequestToRemove() => BlocProvider.of<BlocCategories>(context)
+        .add(BlocCategoriesEventRequestToRemove(category));
+
+    void handleGoTo() {
       final arguments = {keyArgsCategory: category};
 
       Navigator.pushNamed(
@@ -23,6 +26,10 @@ class _FMTCategory extends StatelessWidget {
       );
     }
 
+    void handleConfirmToRemove() => GlobalNavigator.showAlert(
+          _FMTDialogCategoryRemove(category: category),
+        );
+
     return FMTCard(
       title: FMTHeroText(
         tag: category.id,
@@ -30,11 +37,14 @@ class _FMTCategory extends StatelessWidget {
       ),
       subtitle: labelsCategories[keySpendingAdd],
       trailing: IconButton(
-        onPressed: handlePressed,
+        onPressed: handleGoTo,
         color: parseColor(category.color),
         icon: const Icon(Icons.arrow_forward_ios_rounded),
       ),
-      onTap: handleTap,
+      onAdd: handleAdd,
+      onRequestToRemove: handleRequestToRemove,
+      onConfirmToRemove: handleConfirmToRemove,
+      isRequestToRemove: category.isRequestToRemove,
     );
   }
 }

@@ -31,14 +31,16 @@ import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 import 'package:fmt/presentation/ui/styles/sizes.dart' as sizes;
 import 'package:fmt/presentation/utils/common.dart';
 
-part 'components/fmt_dialog_category/fmt_button_add_category.dart';
-part 'components/fmt_dialog_spending/fmt_button_add_spending.dart';
 part 'components/fmt_button_cancel.dart';
 part 'components/fmt_categories.dart';
 part 'components/fmt_category.dart';
 part 'components/fmt_diagram_pie.dart';
-part 'components/fmt_dialog_category/fmt_dialog_category.dart';
-part 'components/fmt_dialog_spending/fmt_dialog_spending.dart';
+part 'components/fmt_dialog_category_add/fmt_button_add.dart';
+part 'components/fmt_dialog_category_add/fmt_dialog_category_add.dart';
+part 'components/fmt_dialog_category_remove/fmt_button_category_remove.dart';
+part 'components/fmt_dialog_category_remove/fmt_dialog_category_remove.dart';
+part 'components/fmt_dialog_spending_add/fmt_button_add_spending.dart';
+part 'components/fmt_dialog_spending_add/fmt_dialog_spending.dart';
 
 class ScreenSummary extends StatelessWidget {
   const ScreenSummary({super.key});
@@ -51,7 +53,7 @@ class ScreenSummary extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () => GlobalNavigator.showAlert(FMTDialogCategory()),
+            onPressed: () => GlobalNavigator.showAlert(_FMTDialogCategoryAdd()),
           ),
         ],
       ),

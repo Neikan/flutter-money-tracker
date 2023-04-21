@@ -1,10 +1,6 @@
 part of '../../screen_summary.dart';
 
-class FMTDialogCategory extends StatelessWidget {
-  FMTDialogCategory({
-    super.key,
-  });
-
+class _FMTDialogCategoryAdd extends StatelessWidget {
   final TextEditingController _controllerTitle = TextEditingController();
   final TextEditingController _controllerColor = TextEditingController();
 
