@@ -13,7 +13,7 @@ final defaultTheme = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   iconTheme: _iconTheme,
   textTheme: _textTheme,
-  elevatedButtonTheme: _elevatedButtonTheme,
+  elevatedButtonTheme: _elevatedButtonThemeDefault,
   iconButtonTheme: _iconButtonTheme,
   textButtonTheme: _textButtonTheme,
   listTileTheme: _listTileTheme,
@@ -31,7 +31,7 @@ const _iconTheme = IconThemeData(
   color: Colors.white,
 );
 
-final _elevatedButtonTheme = ElevatedButtonThemeData(
+final _elevatedButtonThemeDefault = ElevatedButtonThemeData(
   style: ButtonStyle(
     textStyle: MaterialStateProperty.all<TextStyle>(
       const TextStyle(
@@ -114,4 +114,5 @@ final _dialogTheme = DialogTheme(
     fontSize: 20.0,
     fontWeight: FontWeight.w700,
   ),
+  actionsPadding: const EdgeInsets.symmetric(horizontal: 25.0),
 );
