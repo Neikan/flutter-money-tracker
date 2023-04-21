@@ -1,9 +1,9 @@
 part of '../screen_spendings.dart';
 
-class _FMTSpendings extends StatelessWidget {
+class _FMTSpendingsList extends StatelessWidget {
   final List<AppSpending> spendings;
 
-  const _FMTSpendings({
+  const _FMTSpendingsList({
     required this.spendings,
   });
 
@@ -15,7 +15,7 @@ class _FMTSpendings extends StatelessWidget {
       ),
       padding: const EdgeInsets.only(top: 25.0, right: 25.0, left: 25.0),
       itemCount: spendings.length,
-      itemBuilder: (_, index) => _FMTSpending(spending: spendings[index]),
+      itemBuilder: (_, index) => _FMTSpendingCard(spending: spendings[index]),
     );
   }
 }

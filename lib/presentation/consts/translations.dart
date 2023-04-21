@@ -25,6 +25,10 @@ const labelsDialogSpending = <String, String>{
   keyFieldSum: 'Введите сумму',
 };
 
+const labelsSpendingDialogRemove = <String, String>{
+  keyTitle: 'Удалить данные о расходе?',
+};
+
 final labelsBottomBar = <TabBottomBar, String>{
   TabBottomBar.expenses: 'Расходы',
   TabBottomBar.profile: 'Профиль',
