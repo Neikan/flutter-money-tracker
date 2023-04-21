@@ -22,8 +22,14 @@ class BlocSpendingsEventRequestToRemove extends BlocSpendingsEvent {
   BlocSpendingsEventRequestToRemove(this.spending);
 }
 
-class BlocSpendingsEventRemove extends BlocSpendingsEvent {
+class BlocSpendingsEventCancelToRemove extends BlocSpendingsEvent {
   final AppSpending spending;
 
-  BlocSpendingsEventRemove(this.spending);
+  BlocSpendingsEventCancelToRemove(this.spending);
+}
+
+class BlocSpendingsEventConfirmToRemove extends BlocSpendingsEvent {
+  final AppSpending spending;
+
+  BlocSpendingsEventConfirmToRemove(this.spending);
 }
