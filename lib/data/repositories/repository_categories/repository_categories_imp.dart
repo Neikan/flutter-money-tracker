@@ -51,7 +51,7 @@ class RepositoryCategoriesImp extends RepositoryCategories {
   }
 
   @override
-  Future<void> remove(AppCategory category) async {
+  Future<void> confirmToRemove(AppCategory category) async {
     state = state.where((element) => category.id != element.id).toList();
   }
 }

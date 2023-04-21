@@ -12,5 +12,5 @@ abstract class RepositoryCategories {
 
   Future<void> cancelToRemove(AppCategory category);
 
-  Future<void> remove(AppCategory category);
+  Future<void> confirmToRemove(AppCategory category);
 }
