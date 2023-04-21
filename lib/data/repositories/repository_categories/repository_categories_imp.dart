@@ -6,12 +6,12 @@ class RepositoryCategoriesImp extends RepositoryCategories {
   const RepositoryCategoriesImp();
 
   static List<AppCategory> state = [
-    AppCategory(
+    const AppCategory(
       id: '1',
       name: 'Кино',
       color: '46B4F2',
     ),
-    AppCategory(
+    const AppCategory(
       id: '2',
       name: 'Игры',
       color: '160452',
@@ -26,5 +26,32 @@ class RepositoryCategoriesImp extends RepositoryCategories {
   @override
   Future<void> add(AppCategory category) async {
     state = [...state, category];
+  }
+
+  @override
+  Future<void> requestToRemove(AppCategory category) async {
+    final updatedCategory = category.copyWith(isRequestToRemove: true);
+
+    final newState = state
+        .map((element) => category.id == element.id ? updatedCategory : element)
+        .toList();
+
+    state = newState;
+  }
+
+  @override
+  Future<void> cancelToRemove(AppCategory category) async {
+    final updatedCategory = category.copyWith(isRequestToRemove: false);
+
+    final newState = state
+        .map((element) => category.id == element.id ? updatedCategory : element)
+        .toList();
+
+    state = newState;
+  }
+
+  @override
+  Future<void> remove(AppCategory category) async {
+    state = state.where((element) => category.id != element.id).toList();
   }
 }
