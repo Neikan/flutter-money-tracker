@@ -17,8 +17,14 @@ class BlocCategoriesEventRequestToRemove extends BlocCategoriesEvent {
   BlocCategoriesEventRequestToRemove(this.category);
 }
 
-class BlocCategoriesEventRemove extends BlocCategoriesEvent {
+class BlocCategoriesEventCancelToRemove extends BlocCategoriesEvent {
   final AppCategory category;
 
-  BlocCategoriesEventRemove(this.category);
+  BlocCategoriesEventCancelToRemove(this.category);
+}
+
+class BlocCategoriesEventConfirmToRemove extends BlocCategoriesEvent {
+  final AppCategory category;
+
+  BlocCategoriesEventConfirmToRemove(this.category);
 }
