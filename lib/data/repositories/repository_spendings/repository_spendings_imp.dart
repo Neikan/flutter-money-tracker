@@ -41,10 +41,21 @@ class RepositorySpendingsImp extends RepositorySpendings {
 
   @override
   Future<void> requestToRemove(AppSpending spending) async {
-    final newSpending = spending.copyWith(isRequestToRemove: true);
+    final updatedSpending = spending.copyWith(isRequestToRemove: true);
 
     final newState = state
-        .map((element) => spending.id == element.id ? newSpending : element)
+        .map((element) => spending.id == element.id ? updatedSpending : element)
+        .toList();
+
+    state = newState;
+  }
+
+  @override
+  Future<void> cancelToRemove(AppSpending spending) async {
+    final updatedSpending = spending.copyWith(isRequestToRemove: false);
+
+    final newState = state
+        .map((element) => spending.id == element.id ? updatedSpending : element)
         .toList();
 
     state = newState;

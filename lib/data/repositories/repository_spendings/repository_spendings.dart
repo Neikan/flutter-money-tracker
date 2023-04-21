@@ -10,5 +10,7 @@ abstract class RepositorySpendings {
 
   Future<void> requestToRemove(AppSpending spending);
 
+  Future<void> cancelToRemove(AppSpending spending);
+
   Future<void> remove(AppSpending spending);
 }
