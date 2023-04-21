@@ -20,7 +20,11 @@ class FMTButtonText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: onCancel ?? () => Navigator.pop(context),
+      onPressed: () {
+        if (onCancel != null) onCancel!();
+
+        Navigator.pop(context);
+      },
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all<Size?>(
           Size(MediaQuery.of(context).size.width, sizes.heightButton),
