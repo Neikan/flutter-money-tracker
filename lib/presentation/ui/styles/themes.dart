@@ -19,6 +19,7 @@ final defaultTheme = ThemeData(
   listTileTheme: _listTileTheme,
   cardTheme: _cardTheme,
   dialogTheme: _dialogTheme,
+  inputDecorationTheme: _inputDecorationTheme,
 );
 
 const appBarTitleTheme = TextStyle(
@@ -114,5 +115,24 @@ final _dialogTheme = DialogTheme(
     fontSize: 20.0,
     fontWeight: FontWeight.w700,
   ),
-  actionsPadding: const EdgeInsets.symmetric(horizontal: 25.0),
+  actionsPadding: const EdgeInsets.symmetric(
+    horizontal: 25.0,
+    vertical: 6.0,
+  ),
+);
+
+const _inputDecorationTheme = InputDecorationTheme(
+  focusColor: colors.brand,
+  counterStyle: TextStyle(
+    color: colors.gray,
+    fontSize: 10.0,
+  ),
+  labelStyle: TextStyle(
+    color: colors.gray,
+    fontSize: 17.0,
+  ),
+  floatingLabelStyle: TextStyle(),
+  errorStyle: TextStyle(
+    color: colors.red,
+  ),
 );
