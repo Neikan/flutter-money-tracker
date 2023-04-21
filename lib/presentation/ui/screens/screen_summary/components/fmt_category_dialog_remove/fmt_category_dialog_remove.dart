@@ -25,7 +25,7 @@ class _FMTDialogCategoryRemove extends StatelessWidget {
       ),
       actions: [
         _FMTButtonCategoryRemove(category: category),
-        const _FMTButtonCancel(),
+        const FMTButtonText(),
       ],
     );
   }

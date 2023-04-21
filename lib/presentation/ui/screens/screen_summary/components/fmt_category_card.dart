@@ -1,9 +1,9 @@
 part of '../screen_summary.dart';
 
-class _FMTCategory extends StatelessWidget {
+class _FMTCategoryCard extends StatelessWidget {
   final AppCategory category;
 
-  const _FMTCategory({
+  const _FMTCategoryCard({
     required this.category,
   });
 

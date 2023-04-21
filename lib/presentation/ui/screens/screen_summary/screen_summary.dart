@@ -19,6 +19,8 @@ import 'package:fmt/presentation/consts/enums.dart';
 import 'package:fmt/presentation/consts/keys.dart';
 import 'package:fmt/presentation/consts/routes.dart';
 import 'package:fmt/presentation/consts/translations.dart';
+import 'package:fmt/presentation/ui/components/buttons/fmt_button_elevated.dart';
+import 'package:fmt/presentation/ui/components/buttons/fmt_button_text.dart';
 import 'package:fmt/presentation/ui/components/fmt_alert_dialog.dart';
 import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
@@ -28,19 +30,17 @@ import 'package:fmt/presentation/ui/components/fmt_hero_text.dart';
 import 'package:fmt/presentation/ui/components/fmt_loader.dart';
 import 'package:fmt/presentation/ui/components/fmt_text_form_field.dart';
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
-import 'package:fmt/presentation/ui/styles/sizes.dart' as sizes;
 import 'package:fmt/presentation/utils/common.dart';
 
-part 'components/fmt_button_cancel.dart';
-part 'components/fmt_categories.dart';
-part 'components/fmt_category.dart';
-part 'components/fmt_diagram_pie.dart';
-part 'components/fmt_dialog_category_add/fmt_button_add.dart';
-part 'components/fmt_dialog_category_add/fmt_dialog_category_add.dart';
-part 'components/fmt_dialog_category_remove/fmt_button_category_remove.dart';
-part 'components/fmt_dialog_category_remove/fmt_dialog_category_remove.dart';
-part 'components/fmt_dialog_spending_add/fmt_button_add_spending.dart';
-part 'components/fmt_dialog_spending_add/fmt_dialog_spending.dart';
+part 'components/fmt_categories_list.dart';
+part 'components/fmt_category_card.dart';
+part 'components/fmt_categories_diagram.dart';
+part 'components/fmt_category_dialog_add/fmt_category_button_add.dart';
+part 'components/fmt_category_dialog_add/fmt_category_dialog_add.dart';
+part 'components/fmt_category_dialog_remove/fmt_category_button_remove.dart';
+part 'components/fmt_category_dialog_remove/fmt_category_dialog_remove.dart';
+part 'components/fmt_spending_dialog_add/fmt_spending_button_add.dart';
+part 'components/fmt_spending_dialog_add/fmt_spending_dialog_add.dart';
 
 class ScreenSummary extends StatelessWidget {
   const ScreenSummary({super.key});
@@ -61,7 +61,7 @@ class ScreenSummary extends StatelessWidget {
         child: BlocBuilder<BlocCategories, BlocCategoriesState>(
           builder: (_, state) => state.when(
             loading: () => const FMTLoader(),
-            loaded: (categories) => _FMTCategories(categories: categories),
+            loaded: (categories) => _FMTCategoriesList(categories: categories),
             error: (message) => FMTErrorData(text: message),
           ),
         ),

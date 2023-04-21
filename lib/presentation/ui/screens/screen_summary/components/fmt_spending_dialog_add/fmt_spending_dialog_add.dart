@@ -32,7 +32,7 @@ class FMTDialogSpending extends StatelessWidget {
           controller: _controller,
           category: category,
         ),
-        const _FMTButtonCancel(),
+        const FMTButtonText(),
       ],
     );
   }

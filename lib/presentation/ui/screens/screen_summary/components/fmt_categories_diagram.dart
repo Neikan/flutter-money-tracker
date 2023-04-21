@@ -1,10 +1,9 @@
 part of '../screen_summary.dart';
 
-class FMTDiagramPie extends StatelessWidget {
+class _FMTCategoriesDiagram extends StatelessWidget {
   final List<AppCategory> categories;
 
-  const FMTDiagramPie({
-    super.key,
+  const _FMTCategoriesDiagram({
     required this.categories,
   });
 

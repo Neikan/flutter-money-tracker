@@ -30,11 +30,11 @@ class _FMTDialogCategoryAdd extends StatelessWidget {
         ),
       ),
       actions: [
-        _FMTButtonAdd(
+        _FMTButtonCategoryAdd(
           controllerTitle: _controllerTitle,
           controllerColor: _controllerColor,
         ),
-        const _FMTButtonCancel(),
+        const FMTButtonText(),
       ],
     );
   }

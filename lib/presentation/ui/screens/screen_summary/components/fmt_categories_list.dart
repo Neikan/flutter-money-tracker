@@ -1,9 +1,9 @@
 part of '../screen_summary.dart';
 
-class _FMTCategories extends StatelessWidget {
+class _FMTCategoriesList extends StatelessWidget {
   final List<AppCategory> categories;
 
-  const _FMTCategories({
+  const _FMTCategoriesList({
     required this.categories,
   });
 
@@ -11,7 +11,7 @@ class _FMTCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FMTDiagramPie(categories: categories),
+        _FMTCategoriesDiagram(categories: categories),
         Expanded(
           child: ListView.builder(
             physics: const BouncingScrollPhysics(
@@ -20,7 +20,7 @@ class _FMTCategories extends StatelessWidget {
             padding: const EdgeInsets.only(top: 25.0, right: 25.0, left: 25.0),
             itemCount: categories.length,
             itemBuilder: (_, index) =>
-                _FMTCategory(category: categories[index]),
+                _FMTCategoryCard(category: categories[index]),
           ),
         ),
       ],
