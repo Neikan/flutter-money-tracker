@@ -14,7 +14,7 @@ class FMTApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: routeSummary,
+      initialRoute: routeCategories,
       onGenerateRoute: generateRoute,
       navigatorKey: navigatorKey,
       theme: defaultTheme,

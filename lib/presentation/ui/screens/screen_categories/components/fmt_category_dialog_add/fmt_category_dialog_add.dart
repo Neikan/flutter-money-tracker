@@ -1,6 +1,6 @@
-part of '../../screen_summary.dart';
+part of '../../screen_categories.dart';
 
-class _FMTDialogCategoryAdd extends StatelessWidget {
+class _FMTCategoryDialogAdd extends StatelessWidget {
   final TextEditingController _controllerTitle = TextEditingController();
   final TextEditingController _controllerColor = TextEditingController();
 
@@ -30,7 +30,7 @@ class _FMTDialogCategoryAdd extends StatelessWidget {
         ),
       ),
       actions: [
-        _FMTButtonCategoryAdd(
+        _FMTCategoryButtonAdd(
           controllerTitle: _controllerTitle,
           controllerColor: _controllerColor,
         ),

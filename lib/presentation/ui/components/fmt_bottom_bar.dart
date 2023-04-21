@@ -20,7 +20,7 @@ class FMTBottonBar extends StatelessWidget {
 
     void handleTap(int index) {
       if (index == 0 && currentIndex != 0) {
-        Navigator.pushReplacementNamed(context, routeSummary);
+        Navigator.pushReplacementNamed(context, routeCategories);
       }
 
       if (index == 1 && currentIndex != 1) {

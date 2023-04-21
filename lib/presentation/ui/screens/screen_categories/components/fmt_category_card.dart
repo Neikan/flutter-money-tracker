@@ -1,4 +1,4 @@
-part of '../screen_summary.dart';
+part of '../screen_categories.dart';
 
 class _FMTCategoryCard extends StatelessWidget {
   final AppCategory category;
@@ -10,11 +10,18 @@ class _FMTCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void handleAdd() => GlobalNavigator.showAlert(
-          FMTDialogSpending(category: category),
+          FMTSpendingDialogAdd(category: category),
         );
 
     void handleRequestToRemove() => BlocProvider.of<BlocCategories>(context)
         .add(BlocCategoriesEventRequestToRemove(category));
+
+    void handleConfirmToRemove() => GlobalNavigator.showAlert(
+          _FMTCategoryDialogRemove(category: category),
+        );
+
+    void handleCancelToRemove() => BlocProvider.of<BlocCategories>(context)
+        .add(BlocCategoriesEventCancelToRemove(category));
 
     void handleGoTo() {
       final arguments = {keyArgsCategory: category};
@@ -25,10 +32,6 @@ class _FMTCategoryCard extends StatelessWidget {
         arguments: arguments,
       );
     }
-
-    void handleConfirmToRemove() => GlobalNavigator.showAlert(
-          _FMTDialogCategoryRemove(category: category),
-        );
 
     return FMTCard(
       title: FMTHeroText(
@@ -42,7 +45,9 @@ class _FMTCategoryCard extends StatelessWidget {
         icon: const Icon(Icons.arrow_forward_ios_rounded),
       ),
       onAdd: handleAdd,
-      onRequestToRemove: handleRequestToRemove,
+      onRequestToRemove: !category.isRequestToRemove
+          ? handleRequestToRemove
+          : handleCancelToRemove,
       onConfirmToRemove: handleConfirmToRemove,
       isRequestToRemove: category.isRequestToRemove,
     );

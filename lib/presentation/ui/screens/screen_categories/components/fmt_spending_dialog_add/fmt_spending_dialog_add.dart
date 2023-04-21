@@ -1,9 +1,9 @@
-part of '../../screen_summary.dart';
+part of '../../screen_categories.dart';
 
-class FMTDialogSpending extends StatelessWidget {
+class FMTSpendingDialogAdd extends StatelessWidget {
   final AppCategory category;
 
-  FMTDialogSpending({
+  FMTSpendingDialogAdd({
     super.key,
     required this.category,
   });
@@ -28,7 +28,7 @@ class FMTDialogSpending extends StatelessWidget {
         ),
       ),
       actions: [
-        _FMTButtonAddSpending(
+        _FMTSpendingButtonAdd(
           controller: _controller,
           category: category,
         ),

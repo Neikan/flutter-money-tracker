@@ -42,8 +42,8 @@ part 'components/fmt_category_dialog_remove/fmt_category_dialog_remove.dart';
 part 'components/fmt_spending_dialog_add/fmt_spending_button_add.dart';
 part 'components/fmt_spending_dialog_add/fmt_spending_dialog_add.dart';
 
-class ScreenSummary extends StatelessWidget {
-  const ScreenSummary({super.key});
+class ScreenCategories extends StatelessWidget {
+  const ScreenCategories({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class ScreenSummary extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            onPressed: () => GlobalNavigator.showAlert(_FMTDialogCategoryAdd()),
+            onPressed: () => GlobalNavigator.showAlert(_FMTCategoryDialogAdd()),
           ),
         ],
       ),

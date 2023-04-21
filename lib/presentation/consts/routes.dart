@@ -1,4 +1,4 @@
-const String routeSummary = 'summary';
+const String routeCategories = 'summary';
 
 const String routeSpendings = 'category';
 

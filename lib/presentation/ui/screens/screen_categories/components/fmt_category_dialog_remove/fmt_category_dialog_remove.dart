@@ -1,14 +1,20 @@
-part of '../../screen_summary.dart';
+part of '../../screen_categories.dart';
 
-class _FMTDialogCategoryRemove extends StatelessWidget {
+class _FMTCategoryDialogRemove extends StatelessWidget {
   final AppCategory category;
 
-  const _FMTDialogCategoryRemove({
+  const _FMTCategoryDialogRemove({
     required this.category,
   });
 
   @override
   Widget build(BuildContext context) {
+    void handleCancel() {
+      BlocProvider.of<BlocCategories>(context).add(
+        BlocCategoriesEventCancelToRemove(category),
+      );
+    }
+
     return FMTDialogWrapper(
       title: Text.rich(
         TextSpan(
@@ -24,9 +30,10 @@ class _FMTDialogCategoryRemove extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       actions: [
-        _FMTButtonCategoryRemove(category: category),
-        const FMTButtonText(),
+        _FMTCategoryButtonRemove(category: category),
+        FMTButtonText(onCancel: handleCancel),
       ],
+      onClose: handleCancel,
     );
   }
 }

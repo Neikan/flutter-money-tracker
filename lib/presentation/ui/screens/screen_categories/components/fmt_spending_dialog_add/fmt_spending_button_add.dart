@@ -1,10 +1,10 @@
-part of '../../screen_summary.dart';
+part of '../../screen_categories.dart';
 
-class _FMTButtonAddSpending extends StatelessWidget {
+class _FMTSpendingButtonAdd extends StatelessWidget {
   final TextEditingController controller;
   final AppCategory category;
 
-  const _FMTButtonAddSpending({
+  const _FMTSpendingButtonAdd({
     required this.controller,
     required this.category,
   });

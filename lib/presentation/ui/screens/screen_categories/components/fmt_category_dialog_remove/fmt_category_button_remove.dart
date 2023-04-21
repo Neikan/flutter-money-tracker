@@ -1,9 +1,9 @@
-part of '../../screen_summary.dart';
+part of '../../screen_categories.dart';
 
-class _FMTButtonCategoryRemove extends StatelessWidget {
+class _FMTCategoryButtonRemove extends StatelessWidget {
   final AppCategory category;
 
-  const _FMTButtonCategoryRemove({
+  const _FMTCategoryButtonRemove({
     required this.category,
   });
 
@@ -12,7 +12,7 @@ class _FMTButtonCategoryRemove extends StatelessWidget {
     return FMTButtonElevated(
       onPressed: () {
         BlocProvider.of<BlocCategories>(context).add(
-          BlocCategoriesEventRemove(category),
+          BlocCategoriesEventConfirmToRemove(category),
         );
       },
       title: labelsButtons[keyButtonConfirm]!,

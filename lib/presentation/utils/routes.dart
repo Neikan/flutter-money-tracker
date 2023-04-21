@@ -13,17 +13,17 @@ import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings.dart';
 import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings_event.dart';
 import 'package:fmt/presentation/consts/keys.dart';
 import 'package:fmt/presentation/consts/routes.dart';
+import 'package:fmt/presentation/ui/screens/screen_categories/screen_categories.dart';
 import 'package:fmt/presentation/ui/screens/screen_not_found.dart';
 import 'package:fmt/presentation/ui/screens/screen_profile/screen_profile.dart';
 import 'package:fmt/presentation/ui/screens/screen_spendings/screen_spendings.dart';
-import 'package:fmt/presentation/ui/screens/screen_summary/screen_summary.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) => MaterialPageRoute(
       settings: settings,
       builder: (BuildContext context) {
         switch (settings.name) {
-          case routeSummary:
-            return const ScreenSummary();
+          case routeCategories:
+            return const ScreenCategories();
 
           case routeSpendings:
             final category = (settings.arguments

@@ -1,4 +1,4 @@
-part of '../screen_summary.dart';
+part of '../screen_categories.dart';
 
 class _FMTCategoriesDiagram extends StatelessWidget {
   final List<AppCategory> categories;
