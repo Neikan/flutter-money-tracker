@@ -63,28 +63,29 @@ class FMTFieldText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final field = TextFormField(
-      autofillHints: autofillHints,
-      autofocus: autofocus,
-      controller: controller,
-      cursorColor: colors.brand,
-      decoration: _getFieldStyle(),
-      enabled: enabled,
-      enableInteractiveSelection: enableInteractiveSelection,
-      enableSuggestions: enableSuggestions ?? true,
-      focusNode: focusNode,
-      inputFormatters: inputFormatters,
-      keyboardType: textInputType,
-      maxLength: maxLength,
-      obscureText: obscureText ?? false,
-      onChanged: onChanged,
-      onTap: onTap,
-      readOnly: readOnly ?? false,
-      textInputAction: textInputAction,
-      validator: onValidated,
+    return Container(
+      padding: padding,
+      child: TextFormField(
+        autofillHints: autofillHints,
+        autofocus: autofocus,
+        controller: controller,
+        cursorColor: colors.brand,
+        decoration: _getFieldStyle(),
+        enabled: enabled,
+        enableInteractiveSelection: enableInteractiveSelection,
+        enableSuggestions: enableSuggestions ?? true,
+        focusNode: focusNode,
+        inputFormatters: inputFormatters,
+        keyboardType: textInputType,
+        maxLength: maxLength,
+        obscureText: obscureText ?? false,
+        onChanged: onChanged,
+        onTap: onTap,
+        readOnly: readOnly ?? false,
+        textInputAction: textInputAction,
+        validator: onValidated,
+      ),
     );
-
-    return Container(padding: padding, child: field);
   }
 
   InputDecoration _getFieldStyle() {
@@ -109,16 +110,9 @@ class FMTFieldText extends StatelessWidget {
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 21.0),
       labelText: labelText,
-      labelStyle: const TextStyle(color: colors.gray),
-      floatingLabelStyle: const TextStyle(),
-      counterText: _getCounter(),
-      focusColor: colors.brand,
+      counterText: _counterText,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
-      counterStyle: const TextStyle(
-        color: colors.gray,
-        fontSize: 10.0,
-      ),
     );
   }
 
@@ -134,21 +128,11 @@ class FMTFieldText extends StatelessWidget {
         vertical: 0.0,
       ),
       labelText: labelText,
-      labelStyle: const TextStyle(color: colors.gray),
-      errorStyle: const TextStyle(
-        color: colors.red,
-      ),
-      floatingLabelStyle: const TextStyle(),
-      counterText: _getCounter(),
-      counterStyle: const TextStyle(
-        fontSize: 10.0,
-        color: colors.gray,
-      ),
-      focusColor: colors.brand,
+      counterText: _counterText,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
     );
   }
 
-  String? _getCounter() => withCounter == true ? null : '';
+  String? get _counterText => withCounter == true ? null : '';
 }
