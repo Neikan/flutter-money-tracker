@@ -115,10 +115,6 @@ final _dialogTheme = DialogTheme(
     fontSize: 20.0,
     fontWeight: FontWeight.w700,
   ),
-  actionsPadding: const EdgeInsets.symmetric(
-    horizontal: 25.0,
-    vertical: 6.0,
-  ),
 );
 
 const _inputDecorationTheme = InputDecorationTheme(
