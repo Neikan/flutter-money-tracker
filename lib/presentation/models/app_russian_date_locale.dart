@@ -6,18 +6,18 @@ class AppRussianDateLocale implements DateLocale {
 
   @override
   final List<String> monthsShort = const [
-    'янв',
-    'февр',
-    'март',
-    'апр',
-    'май',
-    'июнь',
-    'июль',
-    'авг',
-    'сент',
-    'окт',
-    'нояб',
-    'дек',
+    'Янв',
+    'Фев',
+    'Мар',
+    'Апр',
+    'Май',
+    'Июн',
+    'Июл',
+    'Авг',
+    'Сен',
+    'Окт',
+    'Ноя',
+    'Дек',
   ];
 
   @override
@@ -63,4 +63,29 @@ class AppRussianDateLocale implements DateLocale {
 
   @override
   String get pm => 'PM';
+
+  final List<String> monthsFull = const [
+    'Январь',
+    'Февраль',
+    'Март',
+    'Апрель',
+    'Май',
+    'Июнь',
+    'Июль',
+    'Август',
+    'Сентябрь',
+    'Октябрь',
+    'Ноябрь',
+    'Декабрь',
+  ];
+
+  List<List<int>> getMonths() => [
+        [0, 1, 2, 3],
+        [4, 5, 6, 7],
+        [8, 9, 10, 11],
+      ];
+
+  String getMonthShort(int index) => monthsShort[index];
+
+  String getMonthFull(int index) => monthsFull[index];
 }
