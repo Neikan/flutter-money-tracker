@@ -12,6 +12,8 @@ import 'package:fmt/data/models/app_spending/app_spending.dart';
 import 'package:fmt/domain/blocs/bloc_categories/bloc_categories.dart';
 import 'package:fmt/domain/blocs/bloc_categories/bloc_categories_event.dart';
 import 'package:fmt/domain/blocs/bloc_categories/bloc_categories_state.dart';
+import 'package:fmt/domain/blocs/bloc_date/bloc_date.dart';
+import 'package:fmt/domain/blocs/bloc_date/bloc_date_state.dart';
 import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings.dart';
 import 'package:fmt/domain/blocs/bloc_spendings/bloc_spendings_event.dart';
 import 'package:fmt/presentation/config/navigator.dart';
@@ -22,7 +24,8 @@ import 'package:fmt/presentation/consts/translations.dart';
 import 'package:fmt/presentation/ui/components/buttons/fmt_button_elevated.dart';
 import 'package:fmt/presentation/ui/components/buttons/fmt_button_text.dart';
 import 'package:fmt/presentation/ui/components/fmt_alert_dialog.dart';
-import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
+import 'package:fmt/presentation/ui/components/fmt_app_bar/fmt_app_bar.dart';
+import 'package:fmt/presentation/ui/components/fmt_app_bar/fmt_app_bar_title.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_card.dart';
 import 'package:fmt/presentation/ui/components/fmt_error_data.dart';
@@ -49,11 +52,24 @@ class ScreenCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: FMTAppBar(
-        title: 'Апрель 2023',
+        titleWidget: BlocBuilder<BlocDate, BlocDateState>(
+          builder: (_, state) => state.when(
+            loading: () => const FMTLoader(color: Colors.white),
+            loaded: (date) => FMTAppBarTitle(date: date),
+            error: (message) => FMTAppBarTitle(title: message),
+          ),
+        ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () => GlobalNavigator.showAlert(_FMTCategoryDialogAdd()),
+          BlocBuilder<BlocDate, BlocDateState>(
+            builder: (_, state) => state.when(
+              loading: () => const SizedBox(),
+              loaded: (_) => IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () =>
+                    GlobalNavigator.showAlert(_FMTCategoryDialogAdd()),
+              ),
+              error: (_) => const SizedBox(),
+            ),
           ),
         ],
       ),

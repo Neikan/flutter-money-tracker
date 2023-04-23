@@ -3,26 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // Project imports:
-import 'package:fmt/presentation/ui/components/fmt_hero_text.dart';
+import 'package:fmt/data/models/app_date/app_date.dart';
+import 'package:fmt/presentation/ui/components/fmt_app_bar/fmt_app_bar_title.dart';
 import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
 import 'package:fmt/presentation/ui/styles/themes.dart';
 
 const _sizeAppBar = 56.0;
 
 class FMTAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
   final Color? color;
+  final AppDate? date;
   final List<Widget>? actions;
   final Widget? leading;
-  final String? tag;
+  final String? tag, title;
+  final Widget? titleWidget;
 
   const FMTAppBar({
     super.key,
-    required this.title,
     this.color = colors.brand,
+    this.date,
     this.actions,
     this.leading,
     this.tag,
+    this.title,
+    this.titleWidget,
   });
 
   @override
@@ -30,10 +34,6 @@ class FMTAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   AppBar build(BuildContext context) {
-    final titleWidget = tag != null
-        ? FMTHeroText(tag: tag!, title: title, style: appBarTitleTheme)
-        : Text(title);
-
     return AppBar(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: color,
@@ -42,7 +42,12 @@ class FMTAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       backgroundColor: color,
       centerTitle: true,
-      title: titleWidget,
+      title: titleWidget ??
+          FMTAppBarTitle(
+            date: date,
+            tag: tag,
+            title: title,
+          ),
       leading: leading,
       actions: actions,
       titleTextStyle: appBarTitleTheme,

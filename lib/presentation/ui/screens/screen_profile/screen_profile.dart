@@ -11,7 +11,7 @@ import 'package:fmt/domain/blocs/bloc_profile/bloc_profile_state.dart';
 import 'package:fmt/presentation/consts/enums.dart';
 import 'package:fmt/presentation/consts/keys.dart';
 import 'package:fmt/presentation/consts/translations.dart';
-import 'package:fmt/presentation/ui/components/fmt_app_bar.dart';
+import 'package:fmt/presentation/ui/components/fmt_app_bar/fmt_app_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_bottom_bar.dart';
 import 'package:fmt/presentation/ui/components/fmt_error_data.dart';
 import 'package:fmt/presentation/ui/components/fmt_loader.dart';
@@ -29,9 +29,7 @@ class ScreenProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: FMTAppBar(
-        title: labelsProfile[keyTitle]!,
-      ),
+      appBar: FMTAppBar(title: labelsProfile[keyTitle]),
       body: SafeArea(
         child: BlocBuilder<BlocProfile, BlocProfileState>(
           builder: (_, state) => state.when(

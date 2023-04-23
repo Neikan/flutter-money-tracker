@@ -1,6 +1,9 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
+import 'package:fmt/presentation/ui/styles/colors.dart' as colors;
+
 const double _appLoaderBasePadding = 8.0;
 const double _appLoaderBaseStrokeWidth = 4.0;
 
@@ -10,7 +13,7 @@ class FMTLoader extends StatelessWidget {
 
   const FMTLoader({
     super.key,
-    this.color,
+    this.color = colors.brand,
     this.padding,
     this.size,
     this.strokeWidth,
@@ -25,7 +28,7 @@ class FMTLoader extends StatelessWidget {
           height: size,
           width: size,
           child: CircularProgressIndicator(
-            color: color ?? Colors.green,
+            color: color,
             strokeWidth: strokeWidth ?? _appLoaderBaseStrokeWidth,
           ),
         ),
