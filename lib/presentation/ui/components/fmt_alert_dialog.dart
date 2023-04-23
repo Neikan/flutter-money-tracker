@@ -6,12 +6,16 @@ class FMTDialogWrapper extends StatelessWidget {
   final Widget? content;
   final List<Widget>? actions;
   final VoidCallback? onClose;
+  final EdgeInsets? titlePadding, contentPadding, actionsPadding;
 
   const FMTDialogWrapper({
     super.key,
     required this.title,
     this.content,
     this.actions,
+    this.titlePadding,
+    this.contentPadding,
+    this.actionsPadding,
     this.onClose,
   });
 
@@ -20,12 +24,14 @@ class FMTDialogWrapper extends StatelessWidget {
     return WillPopScope(
       child: AlertDialog(
         insetPadding: const EdgeInsets.all(25.0),
-        contentPadding: const EdgeInsets.only(
-          top: 25.0,
-          right: 25.0,
-          bottom: 12.0,
-          left: 25.0,
-        ),
+        titlePadding: titlePadding,
+        contentPadding: contentPadding ?? const EdgeInsets.all(25.0),
+        actionsPadding: actionsPadding ??
+            const EdgeInsets.only(
+              right: 25.0,
+              bottom: 6.0,
+              left: 25.0,
+            ),
         title: title,
         content: content,
         actions: actions,
