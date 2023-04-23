@@ -16,3 +16,6 @@ const String keyButtonAdd = 'buttonAdd';
 const String keyButtonCancel = 'buttonCancel';
 const String keyButtonRemove = 'buttonRemove';
 const String keyButtonConfirm = 'buttonConfirm';
+
+const String keyFirst = 'first';
+const String keyLast = 'last';
